@@ -14,27 +14,26 @@ import javafx.stage.Stage;
 
 public class detailMenuController extends  centralController implements Initializable {
 
-  @FXML //  fx:id="myButton"
+  // define all ui elements
+  @FXML
   private Button detailQuitButton; // Value injected by FXMLLoader
 
-  @Override // This method is called by the FXMLLoader when initialization is complete
+
+  @Override
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-
-    // initialize your logic here: all @FXML variables will have been injected
+    // actions of each ui element
     detailQuitButton.setOnAction(new EventHandler<ActionEvent>() {
-
       @Override
       public void handle(ActionEvent event) {
-
         Stage stage = (Stage) detailQuitButton.getScene().getWindow();
         try {
           loadScene(stage, "../fxmls/AdminLogin.fxml");
         } catch (Exception e) {
           System.out.println("Cannot load Scene");
         }
-
       }
     });
+
   }
 }
 

@@ -1,5 +1,4 @@
 package controllers;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,13 +15,13 @@ import javafx.stage.Stage;
 
 public class adminLoginController extends centralController implements Initializable {
 
-  @FXML //  fx:id="myButton"
+  // define all ui elements
+  @FXML
   private Button adminLoginButton; // Value injected by FXMLLoader
 
-  @Override // This method is called by the FXMLLoader when initialization is complete
+  @Override
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-
-    // initialize your logic here: all @FXML variables will have been injected
+    // actions of each ui element
     adminLoginButton.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
@@ -34,5 +33,6 @@ public class adminLoginController extends centralController implements Initializ
         }
       }
     });
+
   }
 }
