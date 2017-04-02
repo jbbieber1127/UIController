@@ -12,7 +12,7 @@ public class centralController  {
   Set the stage to the initial scene
    */
   public void startUI (Stage primaryStage) throws Exception {
-    loadScene(primaryStage, "../fxmls/AdminLogin.fxml");
+    loadScene(primaryStage, "../fxmls/MainMenu.fxml");
     primaryStage.setTitle("Faulkner Hospital Kiosk");
   }
 

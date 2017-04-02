@@ -7,7 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MapController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0"
+  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="controllers.mapViewController">
    <children>
       <ChoiceBox fx:id="floorChoiceBox" layoutX="14.0" layoutY="150.0" prefWidth="75.0" />
       <Pane fx:id="mapPane" layoutX="150.0" layoutY="150.0" prefHeight="600.0" prefWidth="1150.0">

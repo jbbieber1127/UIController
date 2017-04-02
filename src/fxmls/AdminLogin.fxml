@@ -17,12 +17,12 @@
          <children>
             <ImageView fitHeight="62.0" fitWidth="130.0" layoutX="14.0" layoutY="14.0">
                <image>
-                  <Image url="@../icons/backtomain.jpg" />
+                  <Image url="@../images/icons/backtomain.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="51.0" fitWidth="200.0" layoutX="200.0" layoutY="20.0">
                <image>
-                  <Image url="@../icons/faulkner.gif" />
+                  <Image url="@../images/icons/faulkner.gif" />
                </image>
             </ImageView>
             <Label layoutX="158.0" layoutY="157.0" text="Admin" />
