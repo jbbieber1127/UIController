@@ -128,9 +128,19 @@ public class mapViewController extends centralController implements Initializabl
   private void mapReleased(javafx.event.Event e) {
   }
 
+
+
   @FXML
   private void mapScrolled(ScrollEvent e) {
-    // Resize the Image
+    // Find the old dimensions, will be used for making the zooming look better
+    double oldWidth = mapImage.getFitWidth();
+    double oldHeight = mapImage.getFitHeight();
+    // Resize the image
     resizeImageByHeight(mapImage.getFitHeight()*(e.getDeltaY() > 0 ? 1.05 : 0.95));
+    // Find the new dimensions
+    double newWidth = mapImage.getFitWidth();
+    double newHeight = mapImage.getFitHeight();
+    // Move the image so that the zoom appears to be in the center of the image
+    moveMapImage(mapImage.getX() - (newWidth - oldWidth) / 2 ,mapImage.getY() - (newHeight - oldHeight) / 2);
   }
 }
