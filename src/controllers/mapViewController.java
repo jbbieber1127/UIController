@@ -43,11 +43,7 @@ public class mapViewController extends centralController implements Initializabl
   @FXML
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
     initializeChoiceBox();
-    mapPane.setBackground(new Background(
-        new BackgroundFill(javafx.scene.paint.Color.BLACK, new CornerRadii(0),
-            new Insets(0, 0, 0, 0))));
     initializeMapImage();
-//        mapImage.setViewport(new Rectangle2D(900,300,400,400));
   }
 
   private void initializeMapImage() {
@@ -55,6 +51,7 @@ public class mapViewController extends centralController implements Initializabl
     mapImage.setFitHeight(mapImage.getImage().getHeight());
     mapImage.setFitWidth(mapImage.getImage().getWidth());
     mapImageWtHRatio = mapImage.getFitWidth() / mapImage.getFitHeight();
+    moveMapImage(-2113, -1730);
   }
 
   private void moveMapImage(double x, double y) {
