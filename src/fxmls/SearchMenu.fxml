@@ -9,15 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0"
-  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="controllers.searchMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.searchMenuController">
    <children>
       <Pane prefHeight="750.0" prefWidth="1300.0">
          <children>
             <ImageView fitHeight="379.0" fitWidth="1300.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@background%20shapte.png" />
+                  <Image url="@../images/icons/background%20shapte.png" />
                </image>
             </ImageView>
             <TextField layoutX="325.0" layoutY="235.0" prefHeight="75.0" prefWidth="575.0" promptText="Search Directory">
@@ -27,12 +25,12 @@
             </TextField>
             <ImageView fitHeight="160.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@banner.png" />
+                  <Image url="@../images/icons/banner.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="82.0" fitWidth="496.0" layoutX="410.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@BWFH_logo_rgb.jpg" />
+                  <Image url="@../images/icons/BWFH_logo_rgb.jpg" />
                </image>
             </ImageView>
             <Button layoutX="5.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="150.0" text="&lt;- Back  ">

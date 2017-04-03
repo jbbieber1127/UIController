@@ -9,36 +9,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0"
-  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-  fx:controller="controllers.mainMenuController">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.mainMenuController">
    <children>
       <Pane id="MainMenu" fx:id="mainMenuPane" prefHeight="750.0" prefWidth="1300.0">
          <children>
             <ImageView fitHeight="47.0" fitWidth="140.0" layoutX="1158.0" layoutY="705.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@keylogo.png" />
+                  <Image url="@../images/icons/keylogo.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="160.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@banner.png" />
+                  <Image url="@../images/icons/banner.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="82.0" fitWidth="496.0" layoutX="410.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@BWFH_logo_rgb.jpg" />
+                  <Image url="@../images/icons/BWFH_logo_rgb.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="300.0" fitWidth="1300.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@background%20shapte.png" />
+                  <Image url="@../images/icons/background%20shapte.png" />
                </image>
                <rotationAxis>
                   <Point3D />
                </rotationAxis>
             </ImageView>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="725.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Map">
+            <Button fx:id="mapButton" contentDisplay="GRAPHIC_ONLY" layoutX="725.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Map">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
@@ -48,19 +46,19 @@
                <graphic>
                   <ImageView fitHeight="351.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@mapbutton.png" />
+                        <Image url="@../images/icons/mapbutton.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Search">
+            <Button fx:id="searchButton" contentDisplay="GRAPHIC_ONLY" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Search">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
                <graphic>
                   <ImageView fitHeight="351.0" fitWidth="351.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@searchbutton.png" />
+                        <Image url="@../images/icons/searchbutton.png" />
                      </image>
                   </ImageView>
                </graphic>

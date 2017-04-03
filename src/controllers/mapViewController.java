@@ -92,12 +92,12 @@ public class mapViewController extends centralController implements Initializabl
                 .println("Changing floor to: " + floorChoiceBox.getItems().get((int) new_value));
             // Change the image that's being displayed when the input changes
             Image new_img = new Image(
-                "/images/Floor Plans/" + (floorChoiceBox.getItems().get((int) new_value))
+                "/images/floor_plans/" + (floorChoiceBox.getItems().get((int) new_value))
                     + "floor.png");
             mapImage.setImage(new_img);
           }
         });
-    floorChoiceBox.setValue(1);
+    floorChoiceBox.setValue(4);
   }
 
   @FXML

@@ -16,7 +16,7 @@
          <children>
             <ImageView id="DetailBack" fitHeight="62.0" fitWidth="130.0" layoutX="14.0" layoutY="15.0">
                <image>
-                  <Image url="@../icons/backtomain.jpg" />
+                  <Image url="@../images/icons/backtomain.jpg" />
                </image>
             </ImageView>
             <Label id="DetailTitle" alignment="CENTER" contentDisplay="BOTTOM" layoutX="187.0" layoutY="66.0" prefHeight="32.0" prefWidth="227.0" text="Room Details">
