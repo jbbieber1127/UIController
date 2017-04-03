@@ -23,7 +23,7 @@ public class centralController  {
    */
   public void loadScene (Stage primaryStage, String fxmlpath) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource(fxmlpath));
-    primaryStage.setScene(new Scene(root, 1280, 720));
+    primaryStage.setScene(new Scene(root, 1300, 750));
     primaryStage.show();
   }
 

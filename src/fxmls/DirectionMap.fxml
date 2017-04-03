@@ -15,14 +15,14 @@
    <children>
       <ImageView fitHeight="476.3" fitWidth="600.0">
          <image>
-            <Image url="@../../../Downloads/admintools_and_detailmenu/4_thefourthfloor_sample.png" />
+            <Image url="@../images/floor_plans/4floor.png" />
          </image>
       </ImageView>
       <Pane prefHeight="123.0" prefWidth="140.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <ImageView fitHeight="62.0" fitWidth="130.0" layoutX="7.0">
                <image>
-                  <Image url="@../../../Downloads/admintools_and_detailmenu/backtomain.jpg" />
+                  <Image url="@../images/icons/backtomain.jpg" />
                </image>
             </ImageView>
             <Button layoutY="62.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="140.0" text="Floors">
@@ -34,12 +34,12 @@
       </Pane>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="546.0" layoutY="346.0">
          <image>
-            <Image url="@../../../Downloads/admintools_and_detailmenu/minussign.jpg" />
+            <Image url="@../images/icons/minussign.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="546.0" layoutY="297.0">
          <image>
-            <Image url="@../../../Downloads/admintools_and_detailmenu/PlusSign.jpg" />
+            <Image url="@../images/icons/PlusSign.jpg" />
          </image>
       </ImageView>
       <Button id="DetailQuit" layoutX="526.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="Quit" />

@@ -4,6 +4,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -15,7 +16,7 @@ public class adminLoginController extends centralController implements Initializ
 
   // define all ui elements
   @FXML
-  private Button AdminLogin; // Value injected by FXMLLoader
+  private Pane AdminLogin; // Value injected by FXMLLoader
 
   private Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
 
