@@ -184,6 +184,7 @@ public class mapViewController extends centralController implements Initializabl
     changeZoom(1);
   }
 
+  @FXML
   public void zoomOut(){
     changeZoom(-1);
   }
