@@ -27,7 +27,7 @@ public class mainMenuController extends centralController implements Initializab
       mapViewFlag = 3;
       loadScene(primaryStage, "../fxmls/MapScene.fxml");
     } catch (Exception e) {
-      System.out.println("error");
+      e.printStackTrace();
     }
   }
 
