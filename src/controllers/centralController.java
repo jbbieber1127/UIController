@@ -7,6 +7,12 @@ import javafx.stage.Stage;
 
 
 public class centralController  {
+  /* Type of map to show when mapView is displayed
+    1 for interactive map
+    2 for directory map
+    3 for admin map
+   */
+  protected int mapViewFlag = 0;
   /*
   @param primaryStage: The main stage of the application
   Set the stage to the initial scene

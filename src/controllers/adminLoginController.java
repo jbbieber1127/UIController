@@ -18,13 +18,12 @@ public class adminLoginController extends centralController implements Initializ
   @FXML
   private Pane AdminLogin; // Value injected by FXMLLoader
 
-  private Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
-
   @Override
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
   }
 
   public void login () {
+    Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
     // credential check
     try {
       loadScene(primaryStage, "../fxmls/MapScene.fxml");
@@ -35,6 +34,7 @@ public class adminLoginController extends centralController implements Initializ
   }
 
   public void back () {
+    Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
     try {
       startUI(primaryStage);
     } catch (Exception e) {

@@ -24,6 +24,7 @@ public class mainMenuController extends centralController implements Initializab
   public void gotoMap () {
     Stage primaryStage = (Stage) MainMenuPane.getScene().getWindow();
     try {
+      mapViewFlag = 3;
       loadScene(primaryStage, "../fxmls/MapScene.fxml");
     } catch (Exception e) {
       System.out.println("error");
