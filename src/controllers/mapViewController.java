@@ -1,4 +1,7 @@
 package controllers;
+import com.sun.javafx.scene.paint.GradientUtils;
+import java.awt.Dimension;
+import java.awt.Point;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -8,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
@@ -32,9 +36,6 @@ public class mapViewController extends centralController implements Initializabl
   @FXML
   Pane mapPane;
 
-  double mapX;
-  double mapY;
-
   double difX = 0;
   double difY = 0;
   double mapImageWtHRatio;
@@ -46,33 +47,51 @@ public class mapViewController extends centralController implements Initializabl
         new BackgroundFill(javafx.scene.paint.Color.BLACK, new CornerRadii(0),
             new Insets(0, 0, 0, 0))));
     initializeMapImage();
-//        mapImage.setViewport(new Rectangle2D(300,300,400,400));
+//        mapImage.setViewport(new Rectangle2D(900,300,400,400));
   }
 
   private void initializeMapImage() {
-    mapX = mapImage.getX();
-    mapY = mapImage.getY();
+    mapImage.setTranslateZ(-5); // Push the map into the background
     mapImage.setFitHeight(mapImage.getImage().getHeight());
     mapImage.setFitWidth(mapImage.getImage().getWidth());
     mapImageWtHRatio = mapImage.getFitWidth() / mapImage.getFitHeight();
-    System.out.println("Ratio is: " + mapImageWtHRatio);
-
-
   }
 
   private void moveMapImage(double x, double y) {
-    mapX = x;
-    mapY = y;
     mapImage.setX(x);
     mapImage.setY(y);
   }
 
-  private void changeMapDimensions(double width, double height) {
+  private void resizeImageByWidth(double width) {
     mapImage.setFitWidth(width);
+    mapImage.setFitHeight(width/mapImageWtHRatio);
+  }
+
+  private void resizeImageByHeight(double height){
     mapImage.setFitHeight(height);
+    mapImage.setFitWidth(height*mapImageWtHRatio);
+  }
+
+
+  // Takes a point in the scene and returns the pixel on the map that corresponds
+  public Point pointToPixel(Point p){
+    double mapX = mapImage.getX();
+    double mapY = mapImage.getY();
+    double maxX = mapImage.getFitWidth() + mapX;
+    double maxY = mapImage.getFitHeight() + mapY;
+    if(p.x > mapX && p.x < maxX && p.y > mapY && p.y < maxY){
+      double ratioX = (p.x - mapX)/mapImage.getFitWidth();
+      double ratioY = (p.x - mapY)/mapImage.getFitHeight();
+      double pixelX = ratioX*mapImage.getImage().getWidth();
+      double pixelY = ratioY*mapImage.getImage().getHeight();
+      return new Point((int) pixelX, (int) pixelY);
+    }else{
+      return null;
+    }
   }
 
   private void initializeChoiceBox() {
+    // Add options to change floors
     floorChoiceBox.getItems().add(1);
     floorChoiceBox.getItems().add(2);
     floorChoiceBox.getItems().add(3);
@@ -84,12 +103,6 @@ public class mapViewController extends centralController implements Initializabl
     floorChoiceBox.getSelectionModel().selectedIndexProperty().addListener(
         new ChangeListener<Number>() {
           public void changed(ObservableValue ov, Number old_value, Number new_value) {
-            System.out.println(
-                "You picked index: " + new_value + ". The old index was: " + old_value
-                    + ". The value at that index is: " + floorChoiceBox.getItems()
-                    .get((int) new_value));
-            System.out
-                .println("Changing floor to: " + floorChoiceBox.getItems().get((int) new_value));
             // Change the image that's being displayed when the input changes
             Image new_img = new Image(
                 "/images/floor_plans/" + (floorChoiceBox.getItems().get((int) new_value))
@@ -101,45 +114,26 @@ public class mapViewController extends centralController implements Initializabl
   }
 
   @FXML
-  public void dragMap(MouseEvent e) {
-    System.out.println("Dragging the Map");
+  private void dragMap(MouseEvent e) {
+//    System.out.println("Dragging the Map");
     double newX = e.getSceneX() - difX;
     double newY = e.getSceneY() - difY;
     moveMapImage(newX, newY);
   }
 
   @FXML
-  public void mapPressed(MouseEvent e) {
-    System.out.println("Map Pressed");
-
-    difX = e.getSceneX() - mapX;
-    difY = e.getSceneY() - mapY;
+  private void mapPressed(MouseEvent e) {
+    difX = e.getSceneX() - mapImage.getX();
+    difY = e.getSceneY() - mapImage.getY();
   }
 
   @FXML
-  public void mapReleased(javafx.event.Event e) {
+  private void mapReleased(javafx.event.Event e) {
   }
 
   @FXML
-  public void mapScrolled(ScrollEvent e) {
-    // Dimensions before resizing of image
-    double oldHeight = mapImage.getFitHeight();
-    double oldWidth = mapImage.getFitWidth();
+  private void mapScrolled(ScrollEvent e) {
     // Resize the Image
-    mapImage.setFitHeight(mapImage.getFitHeight() + e.getDeltaY() * 2);
-    mapImage.setFitWidth(mapImage.getFitHeight() * mapImageWtHRatio);
-    // Difference in image sizes
-    double difX = mapImage.getFitWidth() - oldWidth;
-    double difY = mapImage.getFitHeight() - oldHeight;
-    // Now move the image around the cursor, proportionally to its location
-    double proportionX =
-        (e.getSceneX() - mapImage.localToScene(mapImage.getBoundsInLocal()).getMinX()) / mapImage
-            .getFitWidth();
-    double proportionY =
-        (e.getSceneY() - mapImage.localToScene(mapImage.getBoundsInLocal()).getMinY()) / mapImage
-            .getFitHeight();
-    moveMapImage(mapImage.getX() - difX * proportionX, mapImage.getY() - difY * proportionY);
-    System.out.println("X: " + proportionX + " - Y: " + proportionY);
-
+    resizeImageByHeight(mapImage.getFitHeight()*(e.getDeltaY() > 0 ? 1.05 : 0.95));
   }
 }
