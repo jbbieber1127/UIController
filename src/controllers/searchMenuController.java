@@ -16,4 +16,6 @@ public class searchMenuController extends centralController implements Initializ
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
     // actions of each ui element
   }
+
+
 }

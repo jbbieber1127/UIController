@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750" prefWidth="1300"
   xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
   fx:controller="controllers.detailMenuController">
   <children>
-      <Pane id="DetailScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;">
+      <Pane id="DetailScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750" prefWidth="1300" style="-fx-background-color: #FFFFFF;">
          <children>
             <ImageView id="DetailBack" fitHeight="62.0" fitWidth="130.0" layoutX="14.0" layoutY="15.0">
                <image>
-                  <Image url="@../icons/backtomain.jpg" />
+                  <Image url="@../images/icons/backtomain.jpg" />
                </image>
             </ImageView>
             <Label id="DetailTitle" alignment="CENTER" contentDisplay="BOTTOM" layoutX="187.0" layoutY="66.0" prefHeight="32.0" prefWidth="227.0" text="Room Details">
@@ -29,7 +29,7 @@
             <Label id="DetailService" layoutX="52.0" layoutY="164.0" prefHeight="45.0" prefWidth="503.0" text="Services: CT" />
             <Label id="DetailDoctor" layoutX="52.0" layoutY="209.0" prefHeight="45.0" prefWidth="503.0" text="Doctor: Harry" />
             <Label id="DetailHP" layoutX="52.0" layoutY="254.0" prefHeight="45.0" prefWidth="503.0" text="Healthcare provider: Boston Healthcare" />
-            <Button fx:id="detailQuitButton" layoutX="525.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="Quit" />
+            <Button layoutX="525.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="Quit" onMouseClicked="#quit"/>
          </children>
       </Pane>
    </children>

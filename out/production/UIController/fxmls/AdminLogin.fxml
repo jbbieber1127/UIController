@@ -9,27 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;"
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750" prefWidth="1300" style="-fx-background-color: #FFFFFF;"
   xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
   fx:controller="controllers.adminLoginController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;">
+      <Pane prefHeight="750" prefWidth="1300" style="-fx-background-color: transparent;">
          <children>
             <ImageView fitHeight="62.0" fitWidth="130.0" layoutX="14.0" layoutY="14.0">
                <image>
-                  <Image url="@../icons/backtomain.jpg" />
+                  <Image url="@../images/icons/backtomain.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="51.0" fitWidth="200.0" layoutX="200.0" layoutY="20.0">
                <image>
-                  <Image url="@../icons/faulkner.gif" />
+                  <Image url="@../images/icons/faulkner.gif" />
                </image>
             </ImageView>
             <Label layoutX="158.0" layoutY="157.0" text="Admin" />
             <Label layoutX="158.0" layoutY="221.0" text="Password" />
             <TextField layoutX="239.0" layoutY="153.0" />
             <PasswordField layoutX="239.0" layoutY="217.0" />
-            <Button fx:id="adminLoginButton" layoutX="276.0" layoutY="300.0" mnemonicParsing="false" text="Login" />
+            <Button layoutX="276.0" layoutY="300.0" mnemonicParsing="false" text="Login" onMouseClicked="#login"/>
          </children>
       </Pane>
    </children>

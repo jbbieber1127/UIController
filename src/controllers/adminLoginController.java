@@ -1,8 +1,6 @@
 package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -17,22 +15,31 @@ public class adminLoginController extends centralController implements Initializ
 
   // define all ui elements
   @FXML
-  private Button adminLoginButton; // Value injected by FXMLLoader
+  private Button AdminLogin; // Value injected by FXMLLoader
+
+  private Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
 
   @Override
   public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-    // actions of each ui element
-    adminLoginButton.setOnAction(new EventHandler<ActionEvent>() {
-      @Override
-      public void handle(ActionEvent event) {
-        Stage stage = (Stage) adminLoginButton.getScene().getWindow();
-        try {
-          loadScene(stage, "../fxmls/DetailMenu.fxml");
-        } catch (Exception e) {
-          System.out.println("Cannot load Scene");
-        }
-      }
-    });
-
   }
+
+  public void login () {
+    // credential check
+    try {
+      loadScene(primaryStage, "../fxmls/MapScene.fxml");
+    } catch (Exception e) {
+      System.out.println("Cannot load map view");
+      e.printStackTrace();
+    }
+  }
+
+  public void back () {
+    try {
+      startUI(primaryStage);
+    } catch (Exception e) {
+      System.out.println("Cannot load main menu");
+      e.printStackTrace();
+    }
+  }
+
 }

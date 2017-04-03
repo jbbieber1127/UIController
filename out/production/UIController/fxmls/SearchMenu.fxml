@@ -9,7 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0"
+  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="controllers.searchMenuController">
    <children>
       <Pane prefHeight="750.0" prefWidth="1300.0">
          <children>
@@ -33,26 +35,26 @@
                   <Image url="@BWFH_logo_rgb.jpg" />
                </image>
             </ImageView>
-            <Button layoutX="5.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="150.0" text="&lt;- Back  ">
+            <Button fx:id="searchMenuBack" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="150.0" text="&lt;- Back  ">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
-            <Button layoutX="900.0" layoutY="235.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="X">
+            <Button fx:id="searchMenuClear" layoutX="900.0" layoutY="235.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="X">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button layoutX="1145.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="150.0" text="Done">
+            <Button fx:id="searchMenuDone" layoutX="1145.0" layoutY="5.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="150.0" text="Done">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
             <Pane layoutX="325.0" layoutY="320.0" prefHeight="365.0" prefWidth="650.0">
                <children>
-                  <Button layoutX="535.0" layoutY="315.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" text="  View Info -&gt;" />
+                  <Button fx:id="searchMenuInfo" layoutX="535.0" layoutY="315.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" text="  View Info -&gt;" />
                   <ListView prefHeight="305.0" prefWidth="650.0" />
-                  <Button layoutX="410.0" layoutY="315.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" text="Show on Map" />
+                  <Button fx:id="searchMenuMap" layoutX="410.0" layoutY="315.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" text="Show on Map" />
                </children>
             </Pane>
          </children>

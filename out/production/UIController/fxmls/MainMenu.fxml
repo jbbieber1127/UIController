@@ -9,11 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0"
+  xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="controllers.mainMenuController">
    <children>
       <Pane id="MainMenu" fx:id="mainMenuPane" prefHeight="750.0" prefWidth="1300.0">
          <children>
-            <ImageView fitHeight="47.0" fitWidth="140.0" layoutX="1158.0" layoutY="705.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mainMenuAdmin" fitHeight="47.0" fitWidth="140.0" layoutX="1158.0" layoutY="705.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@keylogo.png" />
                </image>
@@ -36,7 +38,7 @@
                   <Point3D />
                </rotationAxis>
             </ImageView>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="725.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Map">
+            <Button fx:id="mainMenuMap" contentDisplay="GRAPHIC_ONLY" layoutX="725.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Map">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
@@ -51,7 +53,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Search">
+            <Button fx:id="mainMenuSearch" contentDisplay="GRAPHIC_ONLY" layoutX="225.0" layoutY="240.0" mnemonicParsing="false" prefHeight="350.0" prefWidth="350.0" style="-fx-background-radius: 175;" text="Search">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
