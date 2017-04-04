@@ -12,7 +12,8 @@ public class centralController  {
     2 for directory map
     3 for admin map
    */
-  protected int mapViewFlag = 0;
+  // Needs to be static so that it's a global variable
+  protected static int mapViewFlag = 0;
   /*
   @param primaryStage: The main stage of the application
   Set the stage to the initial scene

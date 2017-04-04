@@ -117,7 +117,7 @@ public class mapViewController extends centralController implements Initializabl
 
   // TODO List
   // Add a feature to change privilege modes
-  // Add feature to display nodes relative to map
+  // Add feature to display nodes relative to map -> DONE
   // Add feature to display node connections
   // Add a feature to enable adding of nodes
   // Add a feature to enable editing of nodes
@@ -133,7 +133,7 @@ public class mapViewController extends centralController implements Initializabl
     System.out.println("Permissions: " + mapViewFlag);
     initializeChoiceBox();
     initializeMapImage();
-    setViewPrivileges(3);
+//    setViewPrivileges(1);
     nodes.add(new Node1(250, 400));
     paintNodes();
   }
@@ -163,7 +163,7 @@ public class mapViewController extends centralController implements Initializabl
   }
 
   private void initializeMapImage() {
-    mapImage.setTranslateZ(-5); // Push the map into the background
+    //mapImage.setTranslateZ(-5); // Push the map into the background
     mapImage.setFitHeight(mapImage.getImage().getHeight());
     mapImage.setFitWidth(mapImage.getImage().getWidth());
     mapImageWtHRatio = mapImage.getFitWidth() / mapImage.getFitHeight();
@@ -176,7 +176,7 @@ public class mapViewController extends centralController implements Initializabl
   3 for admin map
  */
   private void setViewPrivileges(int level){
-
+    mapViewFlag = level;
   }
 
   // Navigates back to the main menu
@@ -243,11 +243,20 @@ public class mapViewController extends centralController implements Initializabl
   // Scene Control Methods //
   ///////////////////////////
 
+  // Draw the Nodes on the map. This does not draw connections, just the nodes.
   private void paintNodes(){
+    if(mapViewFlag != 3){
+      return;
+    }
    ObservableList<javafx.scene.Node> children = ((AnchorPane) mapImage.getParent()).getChildren();
    children.removeAll(currentlyDrawnNodes);
     for(int i = 0; i < nodes.size(); i++){
+      // draws the circle on the right spot in the scene, based on where it should be on the map.
+      // takes into account translation and zoom.
       Point where2Draw = pixelToPoint(new Point((int) nodes.get(i).getXCoord(), (int) nodes.get(i).getYCoord()));
+
+      // creates the circle at the proper location.
+      // size of the circle scales proportionally with the map zoom
       Circle c = new Circle(where2Draw.x, where2Draw.y, NODE_RADIUS*(Math.pow(1 + ZOOM_COEF, current_zoom)));
 
       // By adding these Circles at this index, I am making them get painted in a certain order
@@ -256,8 +265,9 @@ public class mapViewController extends centralController implements Initializabl
       // the other visual components. 2 is the magic number.
       children.add(2, c);
 
-      c.disableProperty();
+      // Make sure that we track this object
       currentlyDrawnNodes.add(c);
+      // Now display it
       c.setVisible(true);
     }
   }
@@ -292,7 +302,9 @@ public class mapViewController extends centralController implements Initializabl
       // The map is too small, not sure what to do.
     }
     // If we have admin privileges, then we need to move the node displays as well
-    paintNodes();
+//    if(mapViewFlag == 3){
+      paintNodes();
+//    }
   }
 
   // Takes a new width for the image to be resized to. Height is set based on the ratio.

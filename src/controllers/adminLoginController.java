@@ -26,6 +26,7 @@ public class adminLoginController extends centralController implements Initializ
     Stage primaryStage = (Stage) AdminLogin.getScene().getWindow();
     // credential check
     try {
+      mapViewFlag = 3;
       loadScene(primaryStage, "../fxmls/MapScene.fxml");
     } catch (Exception e) {
       System.out.println("Cannot load map view");
