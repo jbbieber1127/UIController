@@ -16,7 +16,7 @@
             <Image url="@../images/icons/background_shapte.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="mapImage" fitHeight="150.0" fitWidth="400.0" layoutX="88.0" layoutY="91.0" onMouseDragged="#dragMap" onMousePressed="#mapPressed" onMouseReleased="#mapReleased" onScroll="#mapScrolled" pickOnBounds="true" x="140.0" y="140.0" />
+      <ImageView fx:id="mapImage" fitHeight="150.0" fitWidth="400.0" onMouseDragged="#dragMap" onMousePressed="#mapPressed" onMouseReleased="#mapReleased" onScroll="#mapScrolled" pickOnBounds="true" x="140.0" y="140.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1300.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="750.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="150.0" />
       <ImageView id="MainBanner" fitHeight="160.0" fitWidth="1300.0" pickOnBounds="true" preserveRatio="true">
